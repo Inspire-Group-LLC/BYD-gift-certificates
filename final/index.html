@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta name="theme-color" content="#1e1043"> -->
+  <meta name="theme-color" content="#000">
+  <meta name="msapplication-navbutton-color" content="#000">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="">
+  <link rel="shortcut icon" href="" />
+  <script defer src="js/script.js"></script>
+  <title>BYD Certifex</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+  <div class="login_page hidden">
+    <div class="login-wrapper ">
+      <div class="login">
+        <img src="./img/byd logo.png" alt="">
+        <div class="form-wrapper">
+          <h2>Login page</h2>
+          <form action="POST" id="login_form">
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+            <button type="submit">Log in</button>
+            <div class="registrate_btns">
+              <div id="registration_page_link">Registration</div>
+              <div id="forgot_pass">Forgot password?</div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="registration_page hidden">
+    <div class="login-wrapper">
+      <div class="login">
+        <img src="./img/byd logo.png" alt="">
+        <div class="form-wrapper">
+          <h2>Registration page</h2>
+          <form action="POST" id="registration_form">
+            <div class="registrate_inputs">
+              <input type="text" name="full_name" placeholder="Full name">
+              <input type="text" name="username" placeholder="Username">
+            </div>
+            <div class="registrate_inputs">
+              <input type="password" name="password" placeholder="Password">
+              <input type="tel" name="phone_number" placeholder="Phone Number (+998...)">
+            </div>
+            <button type="submit">Registrate</button>
+            <div class="registrate_btns">
+              <div id="login_page_link">Login</div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="new-sertificate" class="hidden">
+    <div class="form">
+      <div class="form_heading">
+        <label class="heading">New Certificate</label>
+        <div class="close_btn" id="close_create"></div>
+      </div>
+      <label class="input_label">Unique id</label>
+      <input name="unique_string" id="unique_string" placeholder="id" class="form-control" type="text" value="">
+      <label class="input_label">Price</label>
+      <input name="price" id="price" placeholder="price" class="form-control" type="number" value="">
+      <label class="input_label">Phone Number</label>
+      <input name="phone" id="phone" placeholder="+998..." class="form-control" type="tel" value="">
+      <button id="submit_new_sertificate">Submit</button>
+    </div>
+  </div>
+  <div id="transfer" class="hidden">
+    <form class="form" id="transfer_form">
+      <div class="form_heading">
+        <label class="heading">Transfer Certificate</label>
+        <div class="close_btn" id="close_transfer"></div>
+      </div>
+      <label class="input_label">Unique id</label>
+      <input name="unique_string" placeholder="id" class="form-control" type="text" value="">
+      <label class="input_label">Phone Number</label>
+      <input name="phone_number" placeholder="+998..." class="form-control" type="tel" value="">
+      <button type="submit" id="submit_transfer">Submit</button>
+    </form>
+  </div>
+  <div class="container" id="table_page">
+    <div class="heading"><h1 id="page_heading">Certificates</h1></div>
+    <div class="buttons">
+      <div class="filters">
+        <input type="text" id="search_filter" class="search" placeholder="Search certificates...">
+        <!-- <select name="" id="certificate-option">
+          <option value="">All</option>
+          <option value="">All</option>
+        </select> -->
+        <!-- <select name="" id="certificate-date">
+          <option value="">Date</option>
+        </select> -->
+      </div>
+      <div class="actions">
+        <button class="transfer" id="open_transfer_btn">Transfer</button>
+        <button class="newSertificate hidden">+ New Certificate</button>
+        <button id="logout">Logout</button>
+      </div>
+    </div>
+    <div class="table">
+      <table id="certificates-table">
+        <tr id="table_th">   
+          <th><div><input type="checkbox"></div></th>   
+          <th class="thtable" id="sort-by-name"><div>Full Name (created at)<span><img src="img/sort.svg" alt=""></span></div></th>
+          <th class="thtable"><div>Certificate</div></th>
+          <th class="thtable" id="sort-by-price"><div>Price <span><img src="img/sort.svg" alt=""></span></div></th>
+          <th><div><img src="img/tableMore.svg" alt=""></div></th>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>
